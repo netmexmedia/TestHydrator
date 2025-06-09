@@ -1,0 +1,20 @@
+services:
+  Netmex\HydratorBundle\Hydrator\Hydrator:
+    autowire: true
+    autoconfigure: true
+    public: true
+
+  Netmex\HydratorBundle\Processor\AttributeProcessor:
+    autowire: true
+    autoconfigure: true
+
+  Netmex\HydratorBundle\Transformer\TransformerRegistry:
+    autowire: true
+    autoconfigure: true
+    public: true
+
+  Netmex\HydratorBundle\Transformer\:
+    resource: '../../Transformer/'
+    autowire: true
+    autoconfigure: true
+    public: false
