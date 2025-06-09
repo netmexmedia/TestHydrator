@@ -2,7 +2,7 @@
 
 namespace Netmex\HydratorBundle\Hydrator;
 
-use Netmex\HydratorBundle\Attribute\HydrateIgnore;
+use Netmex\HydratorBundle\Attribute\Ignore;
 use Netmex\HydratorBundle\Contract\HydratorInterface;
 use Netmex\HydratorBundle\Processor\AttributeProcessor;
 use Netmex\HydratorBundle\Transformer\TransformerRegistry;
@@ -44,7 +44,6 @@ class Hydrator implements HydratorInterface
                 }
             }
         }
-
 
         return $this->serializer->denormalize(
             $data,

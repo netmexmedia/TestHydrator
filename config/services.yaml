@@ -12,9 +12,3 @@ services:
     autowire: true
     autoconfigure: true
     public: true
-
-  Netmex\HydratorBundle\Transformer\:
-    resource: '../../Transformer/'
-    autowire: true
-    autoconfigure: true
-    public: false

@@ -17,6 +17,22 @@ class TransformerRegistry
 
     public function getTransformer(string $name): ?TransformerInterface
     {
-        return $this->transformers[$name] ?? null;
+        if (isset($this->transformers[$name])) {
+            return $this->transformers[$name];
+        }
+
+        if (class_exists($name)) {
+            $transformer = new $name();
+
+            if (!$transformer instanceof TransformerInterface) {
+                throw new \InvalidArgumentException("Class $name must implement TransformerInterface.");
+            }
+
+            $this->transformers[$name] = $transformer;
+
+            return $transformer;
+        }
+
+        return null;
     }
 }
